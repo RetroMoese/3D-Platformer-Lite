@@ -9,8 +9,10 @@ namespace Platformer
     {
         public void Init(EcsSystems ecsSystems)
         {
+            
             var ecsWorld = ecsSystems.GetWorld();
             var gameData = ecsSystems.GetShared<GameData>();
+            
 
             var playerEntity = ecsWorld.NewEntity();
 
@@ -22,6 +24,7 @@ namespace Platformer
             ref var playerInputComponent = ref playerInputPool.Get(playerEntity);
 
             var playerGO = GameObject.FindGameObjectWithTag("Player");
+            playerComponent.playerAnimator = playerGO.GetComponentInChildren<Animator>();// animation 
             playerGO.GetComponentInChildren<GroundCheckerView>().groundedPool = ecsSystems.GetWorld().GetPool<GroundedComponent>();
             playerGO.GetComponentInChildren<GroundCheckerView>().playerEntity = playerEntity;
             playerGO.GetComponentInChildren<CollisionCheckerView>().ecsWorld = ecsWorld;

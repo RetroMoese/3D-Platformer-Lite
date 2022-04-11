@@ -8,6 +8,7 @@ public struct PlayerComponent
     public Rigidbody playerRB;
     public CapsuleCollider playerCollider;
     public Vector3 playerVelocity;
+    public Animator playerAnimator;
     public float playerJumpForce;
     public float playerSpeed;
     public int coins;

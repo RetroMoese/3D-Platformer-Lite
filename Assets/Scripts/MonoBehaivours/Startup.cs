@@ -18,6 +18,7 @@ namespace Platformer
         [SerializeField] private Text coinCounter;
         [SerializeField] private GameObject gameOverPanel;
         [SerializeField] private GameObject playerWonPanel;
+        
 
         private void Start()
         {

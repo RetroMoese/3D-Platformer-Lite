@@ -14,6 +14,7 @@ namespace Platformer
             var filter = ecsSystems.GetWorld().Filter<PlayerInputComponent>().End();
             var playerInputPool = ecsSystems.GetWorld().GetPool<PlayerInputComponent>();
             var tryJumpPool = ecsSystems.GetWorld().GetPool<TryJump>();
+            
             var gameData = ecsSystems.GetShared<GameData>();
 
             foreach (var entity in filter)
@@ -21,6 +22,7 @@ namespace Platformer
                 ref var playerInputComponent = ref playerInputPool.Get(entity);
 
                 playerInputComponent.moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
+                
 
                 if (Input.GetKeyDown(KeyCode.Space))
                 {

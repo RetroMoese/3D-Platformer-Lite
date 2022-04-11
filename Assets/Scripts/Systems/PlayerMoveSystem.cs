@@ -17,8 +17,12 @@ namespace Platformer
             {
                 ref var playerComponent = ref playerPool.Get(entity);
                 ref var playerInputComponent = ref playerInputPool.Get(entity);
+                float h=Input.GetAxis("Horizontal");
+                playerComponent.playerAnimator.SetFloat("speed",h);
+
 
                 playerComponent.playerRB.AddForce(playerInputComponent.moveInput * playerComponent.playerSpeed, ForceMode.Acceleration);
+
             }
             
         }

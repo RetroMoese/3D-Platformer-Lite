@@ -22,7 +22,7 @@ namespace Platformer
                 ref var playerInputComponent = ref playerInputPool.Get(entity);
 
                 playerInputComponent.moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
-                
+
 
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
